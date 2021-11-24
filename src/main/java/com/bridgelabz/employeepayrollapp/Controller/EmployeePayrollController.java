@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employeepayrollservice")
+@RequestMapping("/employeepayroll")
 @Slf4j
 public class EmployeePayrollController {
 	@Autowired
@@ -67,7 +67,7 @@ public class EmployeePayrollController {
 	    public ResponseEntity<ResponseDTO> getEmployeeByDepartment(@PathVariable String department) {
 
 	        List<EmployeePayrollData> employeeList = null;
-	        employeeList = employeePayrollService.getEmployeesPayrollDataByDepartment(department);
+
 	        ResponseDTO response = new ResponseDTO("Get Call for Department Successful", employeeList);
 	        return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
 	    }
